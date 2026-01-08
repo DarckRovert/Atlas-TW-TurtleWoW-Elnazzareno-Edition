@@ -1,0 +1,120 @@
+---
+--- AtlasConfig.lua - Atlas configuration constants and data mappings
+--- 
+--- This file contains the core configuration constants and data mappings for Atlas-TW.
+--- It defines system constants, entrance-to-instance mappings, quest limits,
+--- and provides the foundational configuration data for Atlas functionality.
+--- 
+--- Features:
+--- - System constants and limits
+--- - Entrance to instance mappings
+--- - Instance to entrance mappings
+--- - Quest system configuration
+--- - Map path definitions
+---
+--- @compatible World of Warcraft 1.12
+---
+
+AtlasTW = {
+    --constants
+    --quest
+    QMAXQUESTS = 23,
+    QMAXQUESTITEMS = 6,
+    --atlas
+    NUM_LINES = 24,
+    LOOT_NUM_LINES = 30,
+    DEBUGMODE = false,
+    MAPPATH = "Interface\\AddOns\\Atlas-TW\\Images\\Maps\\",
+    Colors = {
+        RED = "|cffff3333",       -- Common red
+        RED2     = "|cffff0000",  -- Poor quality, errors
+        RED_HORDE = "|cffff6666",  -- Horde color for quest module
+        WHITE   = "|cffFFFFFF",  -- Common quality, normal text
+        BLUE    = "|cff0070dd",  -- Rare quality, info text
+        BLUE2   = "|cff6666ff",  -- Blue for quest module
+        DEFAULT = "|cffFFd200",  -- Default highlight color
+        GREEN   = "|cff00FF00",  -- Uncommon quality, success
+        GREEN2  = "|cff1eff00",  -- Green for quest module
+        GREY    = "|cff9d9d9d",  -- Disabled text, vendor trash
+        GREY2   = "|cff808080",  -- Grey for quest module
+        ORANGE  = "|cffFFA500",  -- Legendary quality, warnings
+        ORANGE2 = "|cffff8000",  -- Orange for quest module
+        PURPLE  = "|cff9330DB",  -- Epic quality, special items
+        YELLOW  = "|cffFFD700",   -- Quest items, important text
+        YELLOW2 = "|cffFFd200",  -- Yellow for quest module
+        Priest = "|cffFFFFFF",  -- Priest color
+        Mage = "|cff68ccef",  -- Mage color
+        Warlock = "|cff9482C9",  -- Warlock color
+        Rogue = "|cffFFF468",  -- Rogue color
+        Druid = "|cffFF7C0A",  -- Druid color
+        Hunter = "|cffAAD372",  -- Hunter color
+        Shaman = "|cff2773FF",  -- Shaman color
+        Paladin = "|cffF48CBA",  -- Paladin color
+        Warrior = "|cffC69B6D",  -- Warrior color
+    },
+    --entrance maps to instance maps
+    EntToInstMatches = {
+        ["BlackfathomDeepsEnt"] =		{"BlackfathomDeeps"},
+        ["BlackrockMountainEnt"] =		{"BlackrockSpireLower","BlackrockSpireUpper","BlackwingLair","BlackrockDepths","MoltenCore"},
+        ["GnomereganEnt"] =				{"Gnomeregan"},
+        ["MaraudonEnt"] =				{"Maraudon"},
+        ["TheDeadminesEnt"] =			{"TheDeadmines"},
+        ["TheSunkenTempleEnt"] =		{"TheSunkenTemple"},
+        ["UldamanEnt"] =				{"Uldaman"},
+        ["WailingCavernsEnt"] =			{"WailingCaverns"},
+        ["DireMaulEnt"] =				{"DireMaulEast","DireMaulNorth","DireMaulWest"},
+        ["ScarletMonasteryEnt"] =		{"ScarletMonasteryArmory","ScarletMonasteryLibrary","ScarletMonasteryCathedral","ScarletMonasteryGraveyard"}
+    },
+    --instance maps to entrance maps
+    InstToEntMatches = {
+        ["BlackfathomDeeps"] =			{"BlackfathomDeepsEnt"},
+        ["BlackrockSpireLower"] =		{"BlackrockMountainEnt"},
+        ["BlackrockSpireUpper"] =		{"BlackrockMountainEnt"},
+        ["BlackwingLair"] =				{"BlackrockMountainEnt"},
+        ["BlackrockDepths"] =			{"BlackrockMountainEnt"},
+        ["MoltenCore"] =				{"BlackrockMountainEnt"},
+        ["Gnomeregan"] =				{"GnomereganEnt"},
+        ["Maraudon"] =					{"MaraudonEnt"},
+        ["TheDeadmines"] =				{"TheDeadminesEnt"},
+        ["TheSunkenTemple"] =			{"TheSunkenTempleEnt"},
+        ["Uldaman"] =					{"UldamanEnt"},
+        ["WailingCaverns"] =			{"WailingCavernsEnt"},
+        ["DireMaulEast"] =				{"DireMaulEnt"},
+        ["DireMaulNorth"] =				{"DireMaulEnt"},
+        ["DireMaulWest"] =				{"DireMaulEnt"},
+        ["ScarletMonasteryArmory"] =					{"ScarletMonasteryEnt"},
+        ["ScarletMonasteryLibrary"] =					{"ScarletMonasteryEnt"},
+        ["ScarletMonasteryCathedral"] =				{"ScarletMonasteryEnt"},
+        ["ScarletMonasteryGraveyard"] =			{"ScarletMonasteryEnt"}
+    },
+
+    --variables
+    --atlas
+    Name = "Atlas-TW",
+    Version = nil,
+    DropDowns = {},
+    CurrentLine = 0,
+    ScrollList = {},
+    UI = {},
+
+    --quest
+    Q = {},
+    Quest = {NextPageCount = 0},
+    isHorde = false,
+    Faction = nil,
+    CurrentMap = nil,
+    QCurrentPage = 0,
+    QCurrentQuest = 0,
+    QCurrentButton = 0,
+    QCurrentInstance = nil,
+}
+
+--- Prints text message to the default chat frame
+--- @param text string - the message to display in chat
+--- @usage printA("message")
+function PrintA(msg)
+  local prefix = (AtlasTW.Colors and AtlasTW.Colors.DEFAULT or '|cffFFd200') .. 'Atlas-TW:|r '
+  DEFAULT_CHAT_FRAME:AddMessage(prefix .. msg)
+end
+
+AtlasTWCharDB = AtlasTWCharDB or { FirstTime = true }
