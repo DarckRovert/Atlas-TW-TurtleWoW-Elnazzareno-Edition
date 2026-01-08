@@ -1,0 +1,23 @@
+## Interface: 11200
+## Title: Atlas-TW TurtleWoW - Elnazzareno Edition
+## Title-deDE: Atlas-TW TurtleWoW - Elnazzareno Edition
+## Title-esES: Atlas-TW TurtleWoW - Elnazzareno Edition
+## Title-ptBR: Atlas-TW TurtleWoW - Elnazzareno Edition
+## Title-zhCN: Atlas-TW TurtleWoW - Elnazzareno Edition
+## Notes: instance map browser; shows possible boss loot and instance quests. [TurtleWoW Fixes by DarckRovert]
+## Notes-deDE: Instanzkarten-Browser; zeigt die mögliche Beute der Bosse und die Quests der Instanz. [TurtleWoW Korrekturen von DarckRovert]
+## Notes-esES: navegador de mapas de mazmorras; muestra el botín posible de los jefes y las misiones de la mazmorra. [Correcciones Turtle WoW por DarckRovert]
+## Notes-ptBR: navegador de mapas de masmorras; mostra o saque possível dos chefes e as missões da masmorra. [Correções TurtleWoW por DarckRovert]
+## Notes-zhCN: 副本地图浏览器; 显示首领可能掉落的战利品以及该副本的任务。[TurtleWoW 修复 by DarckRovert]
+## Version: 1.45-TW
+## X-TurtleWow-Fixes: DarckRovert (Elnazzareno - El Sequito del Terror) - January 2026
+## X-Original-Version: 1.45
+
+## Author: CFM, Otari98, Dan Gilbert, Daviesh, pepopo, etc
+## SavedVariables: AtlasTWOptions
+## SavedVariablesPerCharacter: AtlasTWCharDB
+## OptionalDeps: LootLink, ItemSync, EquipCompare, EQCompare, pfQuest, pfUI
+
+TWAtlas\AtlasTWInit.xml
+TWLoot\LootInit.xml
+TWQuest\QuestInit.xml
