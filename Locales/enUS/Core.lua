@@ -354,8 +354,8 @@ AtlasTW.Localization:RegisterNamespace("UI", "enUS", {
     ["NewVersionAvailableFmt"] = "|cffff0000New version available!|r |cff00ff00Download here:|r %s",
     [" |cffA52A2Aloaded."] = true,
     ["NoticeText"] = "If you find anything missing, please report it at:|r",
-    ["NoticeLink"] = "https://github.com/byCFM2/Atlas-TW/issues/|r",
-    ["Link"] = "https://github.com/byCFM2/Atlas-TW/|r",
+    ["NoticeLink"] = "https://github.com/DarckRovert/Atlas-TW-TurtleWoW-Elnazzareno-Edition/issues/|r",
+    ["Link"] = "https://github.com/DarckRovert/Atlas-TW-TurtleWoW-Elnazzareno-Edition.git|r",
 
     --************************************************
     -- Categories & Menus
